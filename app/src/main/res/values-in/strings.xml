@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">MyUang</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_analytics">Analisis</string>
+    <string name="nav_add">Tambah</string>
+    <string name="nav_tips">Tips</string>
+    <string name="nav_profile">Profil</string>
+    <string name="splash_detecting">Mendeteksi lokasi Anda...</string>
+    <string name="splash_description">Menyesuaikan pengalaman finansial yang tepat untuk wilayah Anda.</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="login_title">Selamat Datang Kembali</string>
+    <string name="login_desc">Masuk untuk melihat sisa uang dan kebiasaan finansialmu hari ini.</string>
+    <string name="login_action">Masuk</string>
+    <string name="forgot_password">Lupa kata sandi?</string>
+    <string name="language">Bahasa</string>
+    <string name="phone_number">No. HP</string>
+    <string name="register_link">Belum punya akun? Daftar di sini</string>
+    <string name="register_title">Mulai Perjalanan Finansialmu</string>
+    <string name="register_desc">Buat akun untuk mengatur keuanganmu dengan lebih cerdas dan mudah.</string>
+    <string name="register_action">Daftar</string>
+    <string name="login_link">Sudah punya akun? Masuk di sini</string>
+    <string name="full_name_caps">NAMA LENGKAP</string>
+    <string name="email_caps">EMAIL</string>
+    <string name="password_caps">KATA SANDI</string>
+    <string name="initial_balance_caps">SALDO AWAL</string>
+    <string name="total_balance">Total Saldo</string>
+    <string name="add_transaction">Tambah Transaksi</string>
+    <string name="today_expense">Pengeluaran Hari Ini</string>
+    <string name="total_income">Total Pemasukan</string>
+    <string name="expense_trend">Tren Pengeluaran</string>
+    <string name="last_7_days">7 hari terakhir</string>
+    <string name="last_30_days">30 hari terakhir</string>
+    <string name="smart_tip">Smart Tip</string>
+    <string name="dashboard_tip">Kamu sudah mencatat 5 transaksi minggu ini. Konsistensi adalah kunci mengelola keuanganmu.</string>
+    <string name="recent_transactions">Transaksi Terakhir</string>
+    <string name="see_all">Lihat Semua</string>
+    <string name="see_all_caps">LIHAT SEMUA</string>
+    <string name="food_drink">Makanan &amp; Minuman</string>
+    <string name="transportation">Transportasi</string>
+    <string name="shopping">Belanja</string>
+    <string name="add_transaction_title">Tambah Transaksi</string>
+    <string name="manual_input">Manual\nInput</string>
+    <string name="scan_receipt_ai">Scan\nStruk AI</string>
+    <string name="try_scan_receipt">Coba Scan Struk!</string>
+    <string name="scan_receipt_hint">Foto struk belanja dan OCR AI akan otomatis mengisi merchant serta total harga.</string>
+    <string name="expense">Pengeluaran</string>
+    <string name="income">Pemasukan</string>
+    <string name="transaction_detail_caps">DETAIL TRANSAKSI</string>
+    <string name="amount">Jumlah</string>
+    <string name="category">Kategori</string>
+    <string name="date">Tanggal</string>
+    <string name="note_optional">Catatan (Opsional)</string>
+    <string name="quick_label">Label Cepat</string>
+    <string name="save_transaction">Simpan Transaksi</string>
+    <string name="scanner_title">Scan Struk AI</string>
+    <string name="scanner_preview">CAMERA PREVIEW</string>
+    <string name="scanner_instruction">Posisikan struk di dalam kotak</string>
+    <string name="scan_result">Hasil Scan</string>
+    <string name="merchant_result">Merchant: Indomaret Point</string>
+    <string name="scan_date_result">Tanggal: 10 Mei 2026</string>
+    <string name="scan_total_result">Total: Rp 65.000</string>
+    <string name="scan_text_empty">Belum ada teks yang terbaca.</string>
+    <string name="scan_text_label">Teks Terbaca</string>
+    <string name="scanner_processing">Membaca teks dari gambar...</string>
+    <string name="scanner_no_camera">Aplikasi kamera tidak tersedia di perangkat ini.</string>
+    <string name="scanner_camera_permission_denied">Izin kamera diperlukan untuk scan struk.</string>
+    <string name="scanner_ocr_failed">Pengenalan teks gagal. Coba gambar yang lebih jelas.</string>
+    <string name="scanner_select_image">Pilih gambar struk</string>
+    <string name="use_scan_result">Gunakan Hasil Scan</string>
+    <string name="weekly">Mingguan</string>
+    <string name="monthly">Bulanan</string>
+    <string name="total_income_caps">TOTAL PEMASUKAN</string>
+    <string name="expense_caps">PENGELUARAN</string>
+    <string name="expense_categories">Kategori Pengeluaran</string>
+    <string name="food_category_summary">Makanan &amp; Minuman   Rp 1.250.000   38%</string>
+    <string name="transport_category_summary">Transportasi   Rp 820.000   25%</string>
+    <string name="shopping_category_summary">Belanja   Rp 640.000   19%</string>
+    <string name="tips_title">Tips Hemat AI</string>
+    <string name="tips_desc">Insight personal untuk belanja lebih cerdas.</string>
+    <string name="smart_summary">Smart Summary</string>
+    <string name="weekly_overview">Weekly Overview</string>
+    <string name="summary_spending_up">Pengeluaranmu 15% lebih tinggi dari minggu lalu, terutama dari kategori Food &amp; Dining.</string>
+    <string name="weekly_saving_goal">Weekly Saving Goal</string>
+    <string name="saving_target">Rp 500.000 Target</string>
+    <string name="achieved_40">40% ACHIEVED</string>
+    <string name="personalized_tips">Personalized Tips</string>
+    <string name="coffee_tip_title">Kurangi Kopi Kekinian</string>
+    <string name="coffee_tip_body">Kamu menghabiskan Rp 350.000 untuk kopi minggu lalu. Seduh di rumah bisa hemat hingga Rp 250.000.</string>
+    <string name="set_coffee_limit">Set Coffee Limit</string>
+    <string name="transport_tip_title">Pilih Transportasi Umum</string>
+    <string name="transport_tip_body">Biaya ride-hailing naik 20%. Naik MRT dua kali seminggu bisa hemat sekitar Rp 100.000.</string>
+    <string name="view_transport_spend">View Transport Spend</string>
+    <string name="shopping_tip_title">Tunda Belanja Impulsif</string>
+    <string name="shopping_tip_body">Tunggu 48 jam sebelum checkout barang e-commerce agar lebih yakin itu kebutuhan.</string>
+    <string name="review_budget">Review Budget</string>
+    <string name="account">Account</string>
+    <string name="manage_account">Kelola Akun</string>
+    <string name="balance_settings">Pengaturan Saldo</string>
+    <string name="export_monthly_report">Export Laporan Bulanan</string>
+    <string name="preferences">Preferences</string>
+    <string name="expense_notifications">Notifikasi Pengeluaran</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="more">More</string>
+    <string name="help_center">Pusat Bantuan</string>
+    <string name="logout">Keluar</string>
+    <string name="day_mon">Sen</string>
+    <string name="day_tue">Sel</string>
+    <string name="day_wed">Rab</string>
+    <string name="day_thu">Kam</string>
+    <string name="day_fri">Jum</string>
+    <string name="day_sat">Sab</string>
+    <string name="day_sun">Min</string>
+    <string-array name="expense_categories_array">
+        <item>Makanan</item>
+        <item>Transportasi</item>
+        <item>Hiburan</item>
+        <item>Belanja</item>
+        <item>Pendidikan</item>
+        <item>Lainnya</item>
+    </string-array>
+    <string-array name="income_categories_array">
+        <item>Gaji</item>
+        <item>Bonus</item>
+        <item>Pemberian</item>
+        <item>Freelance</item>
+        <item>Lainnya</item>
+    </string-array>
+</resources>

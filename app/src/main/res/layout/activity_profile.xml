@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <TextView
+            style="@style/TextDisplay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MyUang"
+            android:textColor="@color/primary" />
+        <ImageButton
+            android:id="@+id/btnProfileNotification"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/bg_icon_circle"
+            android:src="@drawable/ic_notification"
+            android:tint="@color/primary" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="22dp">
+                <FrameLayout
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:background="@drawable/bg_icon_circle">
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_profile"
+                        android:tint="@color/primary" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView android:id="@+id/textProfileName" style="@style/TextHeadline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MyUang" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="6dp" android:src="@drawable/ic_verified" android:tint="@color/success" />
+                </LinearLayout>
+                <TextView android:id="@+id/textProfileEmail" style="@style/TextBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="-" />
+                <TextView
+                    android:id="@+id/textProfileBalance"
+                    style="@style/TextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_chip_green"
+                    android:gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:text="Saldo Rp 0"
+                    android:textColor="@color/success" />
+            </LinearLayout>
+
+            <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/account" />
+
+            <Button android:id="@+id/btnEditAccount" style="@style/ButtonSecondary" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="10dp" android:text="@string/manage_account" />
+            <Button android:id="@+id/btnPaymentSettings" style="@style/ButtonSecondary" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="10dp" android:text="@string/balance_settings" />
+            <Button android:id="@+id/btnExportReport" style="@style/ButtonSecondary" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="10dp" android:text="@string/export_monthly_report" />
+
+            <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/preferences" />
+
+            <Button android:id="@+id/btnReminderSettings" style="@style/ButtonSecondary" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="10dp" android:text="@string/expense_notifications" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card"
+                android:elevation="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_dark_mode" android:tint="@color/on_surface_variant" />
+                <TextView style="@style/TextTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_weight="1" android:text="@string/dark_mode" android:textSize="16sp" />
+                <Switch
+                    android:id="@+id/switchDarkMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/more" />
+            <Button android:id="@+id/btnHelp" style="@style/ButtonSecondary" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="10dp" android:text="@string/help_center" />
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_button_danger"
+                android:text="@string/logout"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/view_bottom_nav" />
+</LinearLayout>

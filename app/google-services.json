@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "100638757883",
+    "project_id": "myuang-171b3",
+    "storage_bucket": "myuang-171b3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100638757883:android:93a7d3fd996f62df62b15e",
+        "android_client_info": {
+          "package_name": "com.myuang.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-cjesjYUWh7_Lu0kdBc_TSyDrlzjmeNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

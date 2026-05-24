@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <TextView style="@style/TextDisplay" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="MyUang" android:textColor="@color/primary" />
+        <ImageButton android:id="@+id/btnAnalyticsNotification" android:layout_width="42dp" android:layout_height="42dp" android:background="@drawable/bg_icon_circle" android:src="@drawable/ic_notification" android:tint="@color/primary" />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingLeft="20dp" android:paddingRight="20dp" android:paddingBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_segment_container" android:orientation="horizontal" android:padding="4dp">
+                <Button android:id="@+id/btnWeekly" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@drawable/bg_segment_active" android:text="@string/weekly" android:textAllCaps="false" android:textColor="@color/on_surface" android:textStyle="bold" />
+                <Button android:id="@+id/btnMonthly" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginLeft="4dp" android:layout_weight="1" android:background="@color/transparent" android:text="@string/monthly" android:textAllCaps="false" android:textColor="@color/on_surface_variant" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginRight="6dp" android:layout_weight="1" android:background="@drawable/bg_card" android:elevation="3dp" android:orientation="vertical" android:padding="16dp">
+                    <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_icon_success" android:padding="8dp" android:src="@drawable/ic_income" android:tint="@color/success" />
+                    <TextView style="@style/TextLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/total_income_caps" />
+                    <TextView android:id="@+id/textIncomeTotal" style="@style/TextNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Rp 0" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_weight="1" android:background="@drawable/bg_card" android:elevation="3dp" android:orientation="vertical" android:padding="16dp">
+                    <ImageView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/bg_icon_danger" android:padding="8dp" android:src="@drawable/ic_expense" android:tint="@color/danger" />
+                    <TextView style="@style/TextLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/expense_caps" />
+                    <TextView android:id="@+id/textExpenseTotal" style="@style/TextNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Rp 0" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:background="@drawable/bg_card" android:elevation="4dp" android:orientation="vertical" android:padding="20dp">
+                <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/expense_trend" />
+                <TextView android:id="@+id/textAnalyticsPeriod" style="@style/TextBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/last_7_days" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="160dp" android:layout_marginTop="16dp" android:gravity="bottom" android:orientation="horizontal">
+                    <View android:id="@+id/barAnalytics0" android:layout_width="0dp" android:layout_height="8dp" android:layout_marginRight="5dp" android:layout_weight="1" android:background="@drawable/bg_bar" />
+                    <View android:id="@+id/barAnalytics1" android:layout_width="0dp" android:layout_height="8dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_weight="1" android:background="@drawable/bg_bar_active" />
+                    <View android:id="@+id/barAnalytics2" android:layout_width="0dp" android:layout_height="8dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_weight="1" android:background="@drawable/bg_bar" />
+                    <View android:id="@+id/barAnalytics3" android:layout_width="0dp" android:layout_height="8dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_weight="1" android:background="@drawable/bg_bar" />
+                    <View android:id="@+id/barAnalytics4" android:layout_width="0dp" android:layout_height="8dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_weight="1" android:background="@drawable/bg_bar" />
+                    <View android:id="@+id/barAnalytics5" android:layout_width="0dp" android:layout_height="8dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_weight="1" android:background="@drawable/bg_bar" />
+                    <View android:id="@+id/barAnalytics6" android:layout_width="0dp" android:layout_height="8dp" android:layout_marginLeft="5dp" android:layout_weight="1" android:background="@drawable/bg_bar" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:background="@drawable/bg_card" android:elevation="4dp" android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/TextTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/expense_categories" />
+                    <TextView android:id="@+id/linkAnalyticsAll" style="@style/TextLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/see_all_caps" android:textColor="@color/primary" />
+                </LinearLayout>
+                <TextView android:id="@+id/textCategorySummaryOne" style="@style/TextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/bg_chip_warning" android:padding="12dp" android:text="@string/food_category_summary" android:textColor="@color/on_surface" />
+                <TextView android:id="@+id/textCategorySummaryTwo" style="@style/TextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_chip_blue" android:padding="12dp" android:text="@string/transport_category_summary" android:textColor="@color/on_surface" />
+                <TextView android:id="@+id/textCategorySummaryThree" style="@style/TextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_chip_green" android:padding="12dp" android:text="@string/shopping_category_summary" android:textColor="@color/on_surface" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/view_bottom_nav" />
+</LinearLayout>

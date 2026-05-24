@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="72dp" android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="20dp" android:paddingRight="20dp">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/TextHeadline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_title" />
+            <TextView style="@style/TextBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_desc" />
+        </LinearLayout>
+        <ImageButton android:id="@+id/btnTipsNotification" android:layout_width="42dp" android:layout_height="42dp" android:background="@drawable/bg_icon_circle" android:src="@drawable/ic_notification" android:tint="@color/primary" />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingLeft="20dp" android:paddingRight="20dp" android:paddingBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_card" android:elevation="4dp" android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageView android:layout_width="42dp" android:layout_height="42dp" android:background="@drawable/bg_icon_circle" android:padding="10dp" android:src="@drawable/ic_tips" android:tint="@color/primary" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/smart_summary" />
+                        <TextView style="@style/TextBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/weekly_overview" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:id="@+id/textTipsSummary" style="@style/TextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/summary_spending_up" android:textColor="@color/on_surface" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:background="@drawable/bg_card" android:elevation="4dp" android:orientation="vertical" android:padding="20dp">
+                <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/weekly_saving_goal" />
+                <TextView android:id="@+id/textSavingTarget" style="@style/TextBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/saving_target" />
+                <ProgressBar android:id="@+id/progressSaving" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="12dp" android:layout_marginTop="16dp" android:max="100" android:progress="40" android:progressDrawable="@drawable/progress_saving" />
+                <TextView android:id="@+id/textSavingAchieved" style="@style/TextLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="right" android:text="@string/achieved_40" />
+            </LinearLayout>
+
+            <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/personalized_tips" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_card" android:elevation="3dp" android:orientation="vertical" android:padding="18dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_chip_warning" android:padding="9dp" android:src="@drawable/ic_food" android:tint="@color/warning" />
+                <TextView android:id="@+id/textTipTitleOne" style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/coffee_tip_title" android:textSize="16sp" />
+                <TextView android:id="@+id/textTipBodyOne" style="@style/TextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/coffee_tip_body" />
+                <Button android:id="@+id/btnSetCoffeeLimit" style="@style/ButtonPrimary" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="14dp" android:text="@string/set_coffee_limit" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_card" android:elevation="3dp" android:orientation="vertical" android:padding="18dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_chip_blue" android:padding="9dp" android:src="@drawable/ic_transport" android:tint="@color/primary" />
+                <TextView android:id="@+id/textTipTitleTwo" style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/transport_tip_title" android:textSize="16sp" />
+                <TextView android:id="@+id/textTipBodyTwo" style="@style/TextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/transport_tip_body" />
+                <Button android:id="@+id/btnViewTransport" style="@style/ButtonSecondary" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="14dp" android:text="@string/view_transport_spend" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_card" android:elevation="3dp" android:orientation="vertical" android:padding="18dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_chip_green" android:padding="9dp" android:src="@drawable/ic_shopping" android:tint="@color/success" />
+                <TextView android:id="@+id/textTipTitleThree" style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/shopping_tip_title" android:textSize="16sp" />
+                <TextView android:id="@+id/textTipBodyThree" style="@style/TextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/shopping_tip_body" />
+                <Button android:id="@+id/btnReviewBudget" style="@style/ButtonPrimary" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="14dp" android:text="@string/review_budget" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/view_bottom_nav" />
+</LinearLayout>

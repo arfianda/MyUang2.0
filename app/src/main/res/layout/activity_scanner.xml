@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_camera">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btnScannerClose"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_segment_container"
+                android:src="@drawable/ic_close"
+                android:tint="@color/on_surface" />
+            <TextView
+                style="@style/TextTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/scanner_title"
+                android:textColor="@android:color/white" />
+            <ImageButton
+                android:id="@+id/btnScannerFlash"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_segment_container"
+                android:src="@drawable/ic_flash"
+                android:tint="@color/on_surface" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageReceiptPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/textCameraPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/scanner_preview"
+                android:textColor="#33FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_scanner_frame"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/ic_scanner"
+                    android:tint="@android:color/white" />
+                <TextView
+                    style="@style/TextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/scanner_instruction"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btnScannerGallery"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_segment_container"
+                android:src="@drawable/ic_gallery"
+                android:tint="@color/on_surface" />
+            <ImageButton
+                android:id="@+id/btnScannerCapture"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginLeft="34dp"
+                android:layout_marginRight="34dp"
+                android:background="@drawable/bg_bottom_nav"
+                android:elevation="8dp"
+                android:src="@drawable/ic_camera"
+                android:tint="@color/primary" />
+            <ImageButton
+                android:id="@+id/btnScannerManual"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_segment_container"
+                android:src="@drawable/ic_note"
+                android:tint="@color/on_surface" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/panelScanResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:padding="22dp"
+        android:visibility="gone">
+        <TextView style="@style/TextTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/scan_result" />
+        <TextView style="@style/TextBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/merchant_result" />
+        <TextView style="@style/TextBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/scan_date_result" />
+        <TextView style="@style/TextNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/scan_total_result" />
+        <TextView
+            style="@style/TextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/scan_text_label"
+            android:textColor="@color/primary" />
+        <TextView
+            android:id="@+id/textScanContent"
+            style="@style/TextBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:maxLines="8"
+            android:text="@string/scan_text_empty"
+            android:textColor="@color/on_surface" />
+        <Button
+            android:id="@+id/btnUseScanResult"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/use_scan_result" />
+    </LinearLayout>
+</FrameLayout>

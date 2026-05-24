@@ -1,0 +1,22 @@
+<resources>
+    <color name="primary">#60A5FA</color>
+    <color name="primary_dark">#2563EB</color>
+    <color name="primary_container">#12345C</color>
+    <color name="surface">#0F172A</color>
+    <color name="surface_white">#172033</color>
+    <color name="surface_low">#202B3F</color>
+    <color name="surface_high">#26364E</color>
+    <color name="on_surface">#F8FAFC</color>
+    <color name="on_surface_variant">#BAC4D6</color>
+    <color name="outline">#42516A</color>
+    <color name="success">#34D399</color>
+    <color name="success_container">#113C32</color>
+    <color name="warning">#FBBF24</color>
+    <color name="warning_container">#4A3712</color>
+    <color name="danger">#FB7185</color>
+    <color name="danger_container">#4C1D2B</color>
+    <color name="camera_dark">#070B12</color>
+    <color name="camera_panel">#111827</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

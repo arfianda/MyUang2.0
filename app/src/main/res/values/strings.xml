@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">MyUang</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_analytics">Analytics</string>
+    <string name="nav_add">Add</string>
+    <string name="nav_tips">Tips</string>
+    <string name="nav_profile">Profile</string>
+    <string name="splash_detecting">Detecting your location...</string>
+    <string name="splash_description">Adjusting the right financial experience for your region.</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="login_title">Welcome Back</string>
+    <string name="login_desc">Sign in to view your balance and financial habits today.</string>
+    <string name="login_action">Sign In</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="language">Language</string>
+    <string name="phone_number">Phone</string>
+    <string name="register_link">No account yet? Register here</string>
+    <string name="register_title">Start Your Financial Journey</string>
+    <string name="register_desc">Create an account to manage your money smarter and easier.</string>
+    <string name="register_action">Register</string>
+    <string name="login_link">Already have an account? Sign in here</string>
+    <string name="full_name_caps">FULL NAME</string>
+    <string name="email_caps">EMAIL</string>
+    <string name="password_caps">PASSWORD</string>
+    <string name="initial_balance_caps">INITIAL BALANCE</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="today_expense">Today\'s Spending</string>
+    <string name="total_income">Total Income</string>
+    <string name="expense_trend">Spending Trend</string>
+    <string name="last_7_days">Last 7 days</string>
+    <string name="last_30_days">Last 30 days</string>
+    <string name="smart_tip">Smart Tip</string>
+    <string name="dashboard_tip">You have logged 5 transactions this week. Consistency is key to managing your money.</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="see_all">See All</string>
+    <string name="see_all_caps">SEE ALL</string>
+    <string name="food_drink">Food &amp; Drinks</string>
+    <string name="transportation">Transportation</string>
+    <string name="shopping">Shopping</string>
+    <string name="add_transaction_title">Add Transaction</string>
+    <string name="manual_input">Manual\nInput</string>
+    <string name="scan_receipt_ai">Scan\nReceipt AI</string>
+    <string name="try_scan_receipt">Try Receipt Scan!</string>
+    <string name="scan_receipt_hint">Take a photo of your receipt and OCR AI will fill in the merchant and total price.</string>
+    <string name="expense">Expense</string>
+    <string name="income">Income</string>
+    <string name="transaction_detail_caps">TRANSACTION DETAIL</string>
+    <string name="amount">Amount</string>
+    <string name="category">Category</string>
+    <string name="date">Date</string>
+    <string name="note_optional">Note (Optional)</string>
+    <string name="quick_label">Quick Label</string>
+    <string name="save_transaction">Save Transaction</string>
+    <string name="scanner_title">Receipt Scanner AI</string>
+    <string name="scanner_preview">CAMERA PREVIEW</string>
+    <string name="scanner_instruction">Place the receipt inside the box</string>
+    <string name="scan_result">Scan Result</string>
+    <string name="merchant_result">Merchant: Indomaret Point</string>
+    <string name="scan_date_result">Date: May 10, 2026</string>
+    <string name="scan_total_result">Total: Rp 65.000</string>
+    <string name="scan_text_empty">No text recognized yet.</string>
+    <string name="scan_text_label">Recognized Text</string>
+    <string name="scanner_processing">Reading text from image...</string>
+    <string name="scanner_no_camera">No camera app is available on this device.</string>
+    <string name="scanner_camera_permission_denied">Camera permission is required to scan receipts.</string>
+    <string name="scanner_ocr_failed">Text recognition failed. Try a sharper image.</string>
+    <string name="scanner_select_image">Select receipt image</string>
+    <string name="use_scan_result">Use Scan Result</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="total_income_caps">TOTAL INCOME</string>
+    <string name="expense_caps">EXPENSE</string>
+    <string name="expense_categories">Expense Categories</string>
+    <string name="food_category_summary">Food &amp; Drinks   Rp 1.250.000   38%</string>
+    <string name="transport_category_summary">Transportation   Rp 820.000   25%</string>
+    <string name="shopping_category_summary">Shopping   Rp 640.000   19%</string>
+    <string name="tips_title">AI Saving Tips</string>
+    <string name="tips_desc">Personal insights for smarter spending.</string>
+    <string name="smart_summary">Smart Summary</string>
+    <string name="weekly_overview">Weekly Overview</string>
+    <string name="summary_spending_up">Your spending is 15% higher than last week, mainly from Food &amp; Dining.</string>
+    <string name="weekly_saving_goal">Weekly Saving Goal</string>
+    <string name="saving_target">Rp 500.000 Target</string>
+    <string name="achieved_40">40% ACHIEVED</string>
+    <string name="personalized_tips">Personalized Tips</string>
+    <string name="coffee_tip_title">Reduce Trendy Coffee</string>
+    <string name="coffee_tip_body">You spent Rp 350.000 on coffee last week. Brewing at home could save up to Rp 250.000.</string>
+    <string name="set_coffee_limit">Set Coffee Limit</string>
+    <string name="transport_tip_title">Choose Public Transport</string>
+    <string name="transport_tip_body">Ride-hailing costs are up 20%. Taking MRT twice a week can save around Rp 100.000.</string>
+    <string name="view_transport_spend">View Transport Spend</string>
+    <string name="shopping_tip_title">Delay Impulse Shopping</string>
+    <string name="shopping_tip_body">Wait 48 hours before checking out e-commerce items to confirm it is a real need.</string>
+    <string name="review_budget">Review Budget</string>
+    <string name="account">Account</string>
+    <string name="manage_account">Manage Account</string>
+    <string name="balance_settings">Balance Settings</string>
+    <string name="export_monthly_report">Export Monthly Report</string>
+    <string name="preferences">Preferences</string>
+    <string name="expense_notifications">Expense Notifications</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="more">More</string>
+    <string name="help_center">Help Center</string>
+    <string name="logout">Logout</string>
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="day_sun">Sun</string>
+    <string-array name="expense_categories_array">
+        <item>Food</item>
+        <item>Transportation</item>
+        <item>Entertainment</item>
+        <item>Shopping</item>
+        <item>Education</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="income_categories_array">
+        <item>Salary</item>
+        <item>Bonus</item>
+        <item>Gift</item>
+        <item>Freelance</item>
+        <item>Other</item>
+    </string-array>
+</resources>

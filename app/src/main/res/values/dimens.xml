@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="screen_margin">20dp</dimen>
+    <dimen name="space_xs">8dp</dimen>
+    <dimen name="space_sm">12dp</dimen>
+    <dimen name="space_md">16dp</dimen>
+    <dimen name="space_lg">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">16dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+</resources>
