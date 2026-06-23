@@ -33,12 +33,12 @@ public class ProfileActivity extends BaseActivity {
         emailText = findViewById(R.id.textProfileEmail);
         balanceText = findViewById(R.id.textProfileBalance);
 
-        findViewById(R.id.btnProfileNotification).setOnClickListener(v -> toast("Tidak ada notifikasi baru"));
+        findViewById(R.id.btnProfileNotification).setOnClickListener(v -> toast(getString(R.string.toast_profile_no_notification)));
         findViewById(R.id.btnEditAccount).setOnClickListener(v -> showNameDialog());
         findViewById(R.id.btnPaymentSettings).setOnClickListener(v -> showBalanceDialog());
-        findViewById(R.id.btnExportReport).setOnClickListener(v -> toast("Export laporan akan memakai transaksi Firestore"));
-        findViewById(R.id.btnReminderSettings).setOnClickListener(v -> toast("Reminder pengeluaran belum aktif"));
-        findViewById(R.id.btnHelp).setOnClickListener(v -> toast("Pusat bantuan belum tersedia"));
+        findViewById(R.id.btnExportReport).setOnClickListener(v -> toast(getString(R.string.toast_profile_export)));
+        findViewById(R.id.btnReminderSettings).setOnClickListener(v -> toast(getString(R.string.toast_profile_reminder)));
+        findViewById(R.id.btnHelp).setOnClickListener(v -> toast(getString(R.string.toast_profile_help)));
 
         Switch darkMode = findViewById(R.id.switchDarkMode);
         darkMode.setChecked(ThemeHelper.isDarkMode(this));
@@ -62,7 +62,7 @@ public class ProfileActivity extends BaseActivity {
                 currentName = user.name;
                 nameText.setText(user.name);
                 emailText.setText(user.email);
-                balanceText.setText("Saldo " + formatCurrency(user.saldo));
+                balanceText.setText(getString(R.string.total_balance) + " " + formatCurrency(user.saldo));
             }
 
             @Override
@@ -83,15 +83,15 @@ public class ProfileActivity extends BaseActivity {
     private void showBalanceDialog() {
         EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
-        input.setHint("Saldo saat ini");
+        input.setHint(R.string.hint_current_balance);
         input.setText(String.valueOf(Math.round(currentSaldo)));
         input.setSelection(input.getText().length());
 
         new AlertDialog.Builder(this)
-                .setTitle("Pengaturan Saldo")
+                .setTitle(R.string.balance_settings)
                 .setView(input)
-                .setNegativeButton("Batal", null)
-                .setPositiveButton("Simpan", (dialog, which) -> {
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.save, (dialog, which) -> {
                     double saldo = parseAmount(input.getText().toString());
                     repository.updateSaldo(saldo, (success, message) -> toast(message));
                 })
@@ -101,18 +101,18 @@ public class ProfileActivity extends BaseActivity {
     private void showNameDialog() {
         EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
-        input.setHint("Nama akun");
+        input.setHint(R.string.hint_account_name);
         input.setText(currentName);
         input.setSelection(input.getText().length());
 
         new AlertDialog.Builder(this)
-                .setTitle("Kelola Akun")
+                .setTitle(R.string.manage_account)
                 .setView(input)
-                .setNegativeButton("Batal", null)
-                .setPositiveButton("Simpan", (dialog, which) -> {
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.save, (dialog, which) -> {
                     String name = input.getText().toString().trim();
                     if (name.isEmpty()) {
-                        toast("Nama wajib diisi");
+                        toast(getString(R.string.validation_name_required));
                         return;
                     }
                     repository.updateName(name, (success, message) -> toast(message));

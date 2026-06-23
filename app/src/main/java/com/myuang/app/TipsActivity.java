@@ -48,7 +48,7 @@ public class TipsActivity extends BaseActivity {
                 findViewById(R.id.textTipBodyThree)
         };
 
-        findViewById(R.id.btnTipsNotification).setOnClickListener(v -> toast("Tips AI dibuat dari transaksi terbaru"));
+        findViewById(R.id.btnTipsNotification).setOnClickListener(v -> toast(getString(R.string.toast_tips_sync)));
         findViewById(R.id.btnSetCoffeeLimit).setOnClickListener(v -> openScreen(AddTransactionActivity.class));
         findViewById(R.id.btnViewTransport).setOnClickListener(v -> openScreen(AnalyticsActivity.class));
         findViewById(R.id.btnReviewBudget).setOnClickListener(v -> openScreen(AnalyticsActivity.class));

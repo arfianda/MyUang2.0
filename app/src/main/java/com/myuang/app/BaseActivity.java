@@ -117,7 +117,8 @@ public abstract class BaseActivity extends Activity {
     }
 
     protected String formatCurrency(double amount) {
-        DecimalFormatSymbols symbols = new DecimalFormatSymbols(new Locale("in", "ID"));
+        Locale locale = new Locale("in", "ID");
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
         symbols.setGroupingSeparator('.');
         DecimalFormat format = new DecimalFormat("#,###", symbols);
         String prefix = amount < 0 ? "-Rp " : "Rp ";

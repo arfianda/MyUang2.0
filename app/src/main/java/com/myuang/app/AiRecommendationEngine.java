@@ -56,9 +56,12 @@ public final class AiRecommendationEngine {
         double topAmount = topCategory == null ? 0 : categoryTotals.get(topCategory);
         double coffeeAmount = keywordExpense(currentWeek, "kopi", "coffee");
 
+        String lang = Locale.getDefault().getLanguage();
+        boolean isIndo = "in".equals(lang) || "id".equals(lang);
+
         Result result = new Result();
         result.savingTarget = formatCurrency(WEEKLY_SAVING_TARGET) + " Target";
-        result.achievedText = progress + "% tercapai";
+        result.achievedText = progress + (isIndo ? "% tercapai" : "% achieved");
         result.savingProgress = progress;
         result.summary = buildSummary(weeklyExpense, previousExpense, topCategory, topAmount);
         result.dashboardTip = buildDashboardTip(transactions, saldo, topCategory, topAmount);
@@ -85,67 +88,141 @@ public final class AiRecommendationEngine {
                                        double previousExpense, String topCategory, double topAmount,
                                        double coffeeAmount, double saldo) {
         List<Tip> tips = new ArrayList<>();
+        String lang = Locale.getDefault().getLanguage();
+        boolean isIndo = "in".equals(lang) || "id".equals(lang);
 
         if (allTransactions.isEmpty()) {
-            tips.add(new Tip("Mulai dari saldo awal", "Tambahkan saldo dan transaksi pertama agar AI bisa membaca pola cashflow kamu.", "Onboarding"));
-            tips.add(new Tip("Catat transaksi kecil", "Pengeluaran kecil seperti parkir, kopi, dan camilan sering menjadi sumber bocor halus.", "Tracking"));
-            tips.add(new Tip("Cek dashboard harian", "Saldo, pemasukan, dan pengeluaran akan otomatis berubah setelah transaksi tersimpan.", "Dashboard"));
+            if (isIndo) {
+                tips.add(new Tip("Mulai dari saldo awal", "Tambahkan saldo dan transaksi pertama agar AI bisa membaca pola cashflow kamu.", "Onboarding"));
+                tips.add(new Tip("Catat transaksi kecil", "Pengeluaran kecil seperti parkir, kopi, dan camilan sering menjadi sumber bocor halus.", "Tracking"));
+                tips.add(new Tip("Cek dashboard harian", "Saldo, pemasukan, dan pengeluaran akan otomatis berubah setelah transaksi tersimpan.", "Dashboard"));
+            } else {
+                tips.add(new Tip("Start with initial balance", "Add your balance and first transaction so the AI can read your cashflow patterns.", "Onboarding"));
+                tips.add(new Tip("Record small transactions", "Small expenses like parking, coffee, and snacks are often source of hidden leaks.", "Tracking"));
+                tips.add(new Tip("Check daily dashboard", "Balance, income, and expenses will automatically update once a transaction is saved.", "Dashboard"));
+            }
             return tips;
         }
 
         if (topCategory != null) {
-            tips.add(new Tip("Pantau " + topCategory, topCategory + " menjadi pengeluaran terbesar minggu ini dengan total "
-                    + formatCurrency(topAmount) + ". Tetapkan batas harian sebelum transaksi berikutnya.", topCategory));
+            if (isIndo) {
+                tips.add(new Tip("Pantau " + topCategory, topCategory + " menjadi pengeluaran terbesar minggu ini dengan total "
+                        + formatCurrency(topAmount) + ". Tetapkan batas harian sebelum transaksi berikutnya.", topCategory));
+            } else {
+                tips.add(new Tip("Monitor " + topCategory, topCategory + " is the largest expense this week with a total of "
+                        + formatCurrency(topAmount) + ". Set a daily limit before your next transaction.", topCategory));
+            }
         }
 
         if (coffeeAmount > 0) {
-            tips.add(new Tip("Kurangi kopi siap beli", "Transaksi berlabel kopi minggu ini mencapai "
-                    + formatCurrency(coffeeAmount) + ". Kurangi 2 kali pembelian untuk menambah ruang tabungan.", "Kopi"));
+            if (isIndo) {
+                tips.add(new Tip("Kurangi kopi siap beli", "Transaksi berlabel kopi minggu ini mencapai "
+                        + formatCurrency(coffeeAmount) + ". Kurangi 2 kali pembelian untuk menambah ruang tabungan.", "Kopi"));
+            } else {
+                tips.add(new Tip("Reduce bought coffee", "Coffee-related transactions this week reached "
+                        + formatCurrency(coffeeAmount) + ". Cut 2 purchases to save more.", "Coffee"));
+            }
         }
 
         if (previousExpense > 0 && weeklyExpense > previousExpense) {
             int growth = (int) Math.round(((weeklyExpense - previousExpense) / previousExpense) * 100);
-            tips.add(new Tip("Pengeluaran naik " + growth + "%", "Minggu ini lebih tinggi dari minggu sebelumnya. Review transaksi terbesar sebelum akhir pekan.", "Trend"));
+            if (isIndo) {
+                tips.add(new Tip("Pengeluaran naik " + growth + "%", "Minggu ini lebih tinggi dari minggu sebelumnya. Review transaksi terbesar sebelum akhir pekan.", "Trend"));
+            } else {
+                tips.add(new Tip("Expenses increased " + growth + "%", "This week is higher than the previous one. Review your largest transactions before the weekend.", "Trend"));
+            }
         } else {
-            tips.add(new Tip("Jaga ritme belanja", "Pengeluaran minggu ini masih terkendali dibanding minggu lalu. Pertahankan catatan transaksi harian.", "Trend"));
+            if (isIndo) {
+                tips.add(new Tip("Jaga ritme belanja", "Pengeluaran minggu ini masih terkendali dibanding minggu lalu. Pertahankan catatan transaksi harian.", "Trend"));
+            } else {
+                tips.add(new Tip("Maintain spending rhythm", "Spending this week is still controlled compared to last week. Keep recording daily transactions.", "Trend"));
+            }
         }
 
         if (saldo < weeklyExpense && weeklyExpense > 0) {
-            tips.add(new Tip("Saldo perlu dijaga", "Saldo saat ini lebih rendah dari pengeluaran 7 hari terakhir. Prioritaskan kebutuhan pokok dulu.", "Saldo"));
+            if (isIndo) {
+                tips.add(new Tip("Saldo perlu dijaga", "Saldo saat ini lebih rendah dari pengeluaran 7 hari terakhir. Prioritaskan kebutuhan pokok dulu.", "Saldo"));
+            } else {
+                tips.add(new Tip("Balance needs attention", "Current balance is lower than the last 7 days of expenses. Prioritize essential needs first.", "Balance"));
+            }
         } else {
-            tips.add(new Tip("Alokasikan sisa saldo", "Pisahkan sebagian saldo untuk target tabungan agar uang tidak habis tanpa rencana.", "Saldo"));
+            if (isIndo) {
+                tips.add(new Tip("Alokasikan sisa saldo", "Pisahkan sebagian saldo untuk target tabungan agar uang tidak habis tanpa rencana.", "Saldo"));
+            } else {
+                tips.add(new Tip("Allocate remaining balance", "Separate a portion of your balance for saving targets to avoid unplanned spending.", "Balance"));
+            }
         }
 
         while (tips.size() < 3) {
-            tips.add(new Tip("Lengkapi catatan", "Semakin lengkap kategori dan label transaksi, semakin presisi rekomendasi AI yang muncul.", "Data"));
+            if (isIndo) {
+                tips.add(new Tip("Lengkapi catatan", "Semakin lengkap kategori dan label transaksi, semakin presisi rekomendasi AI yang muncul.", "Data"));
+            } else {
+                tips.add(new Tip("Complete your records", "The more complete categories and transaction labels, the more precise the AI recommendations.", "Data"));
+            }
         }
         return tips.subList(0, 3);
     }
 
     private static String buildSummary(double weeklyExpense, double previousExpense, String topCategory, double topAmount) {
+        String lang = Locale.getDefault().getLanguage();
+        boolean isIndo = "in".equals(lang) || "id".equals(lang);
+
         if (weeklyExpense == 0) {
-            return "Belum ada pengeluaran minggu ini. Tambahkan transaksi agar AI bisa membuat ringkasan personal.";
+            return isIndo
+                ? "Belum ada pengeluaran minggu ini. Tambahkan transaksi agar AI bisa membuat ringkasan personal."
+                : "No expenses this week. Add transactions so the AI can generate a personal summary.";
         }
-        String categoryText = topCategory == null ? "belum ada kategori dominan" : "terbesar dari " + topCategory + " sebesar " + formatCurrency(topAmount);
+
+        String categoryText;
+        if (isIndo) {
+            categoryText = topCategory == null
+                ? "belum ada kategori dominan"
+                : "terbesar dari " + topCategory + " sebesar " + formatCurrency(topAmount);
+        } else {
+            categoryText = topCategory == null
+                ? "no dominant category yet"
+                : "largest from " + topCategory + " of " + formatCurrency(topAmount);
+        }
+
         if (previousExpense > 0) {
             int growth = (int) Math.round(((weeklyExpense - previousExpense) / previousExpense) * 100);
-            String direction = growth >= 0 ? "naik" : "turun";
-            return "Pengeluaran minggu ini " + direction + " " + Math.abs(growth) + "% dari minggu lalu, " + categoryText + ".";
+            String direction;
+            if (isIndo) {
+                direction = growth >= 0 ? "naik" : "turun";
+                return "Pengeluaran minggu ini " + direction + " " + Math.abs(growth) + "% dari minggu lalu, " + categoryText + ".";
+            } else {
+                direction = growth >= 0 ? "up" : "down";
+                return "Expenses this week are " + direction + " " + Math.abs(growth) + "% from last week, " + categoryText + ".";
+            }
         }
-        return "Pengeluaran minggu ini mencapai " + formatCurrency(weeklyExpense) + ", " + categoryText + ".";
+
+        return isIndo
+            ? "Pengeluaran minggu ini mencapai " + formatCurrency(weeklyExpense) + ", " + categoryText + "."
+            : "Expenses this week reached " + formatCurrency(weeklyExpense) + ", " + categoryText + ".";
     }
 
     private static String buildDashboardTip(List<FinanceTransaction> transactions, double saldo, String topCategory, double topAmount) {
+        String lang = Locale.getDefault().getLanguage();
+        boolean isIndo = "in".equals(lang) || "id".equals(lang);
+
         if (transactions.isEmpty()) {
-            return "Tambahkan saldo dan transaksi pertama untuk mulai melihat insight cashflow real-time.";
+            return isIndo
+                ? "Tambahkan saldo dan transaksi pertama untuk mulai melihat insight cashflow real-time."
+                : "Add balance and first transaction to start seeing real-time cashflow insights.";
         }
         if (topCategory != null && topAmount > 0) {
-            return topCategory + " sedang menjadi pengeluaran terbesar. Total 7 hari terakhir: " + formatCurrency(topAmount) + ".";
+            return isIndo
+                ? topCategory + " sedang menjadi pengeluaran terbesar. Total 7 hari terakhir: " + formatCurrency(topAmount) + "."
+                : topCategory + " is currently the largest expense. Total last 7 days: " + formatCurrency(topAmount) + ".";
         }
         if (saldo <= 0) {
-            return "Saldo belum positif. Tambahkan pemasukan atau perbarui saldo awal dari profil.";
+            return isIndo
+                ? "Saldo belum positif. Tambahkan pemasukan atau perbarui saldo awal dari profil."
+                : "Balance is not positive. Add income or update initial balance from profile.";
         }
-        return "Transaksi sudah tersimpan real-time. Cek label cepat untuk melihat kebiasaan belanja lebih akurat.";
+        return isIndo
+            ? "Transaksi sudah tersimpan real-time. Cek label cepat untuk melihat kebiasaan belanja lebih akurat."
+            : "Transactions saved in real-time. Check quick labels to see spending habits more accurately.";
     }
 
     private static List<FinanceTransaction> filterBetween(List<FinanceTransaction> transactions, Date start, Date end) {
@@ -204,9 +281,11 @@ public final class AiRecommendationEngine {
     }
 
     private static String formatCurrency(double amount) {
-        DecimalFormatSymbols symbols = new DecimalFormatSymbols(new Locale("in", "ID"));
+        Locale locale = new Locale("in", "ID");
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
         symbols.setGroupingSeparator('.');
         DecimalFormat format = new DecimalFormat("#,###", symbols);
-        return "Rp " + format.format(Math.round(Math.abs(amount)));
+        String prefix = amount < 0 ? "-Rp " : "Rp ";
+        return prefix + format.format(Math.round(Math.abs(amount)));
     }
 }

@@ -54,7 +54,7 @@ public class DashboardActivity extends BaseActivity {
         };
 
         findViewById(R.id.btnAddTransaction).setOnClickListener(v -> openScreen(AddTransactionActivity.class));
-        findViewById(R.id.btnDashboardNotification).setOnClickListener(v -> toast("Dashboard sudah tersinkron real-time"));
+        findViewById(R.id.btnDashboardNotification).setOnClickListener(v -> toast(getString(R.string.toast_dashboard_sync)));
         findViewById(R.id.linkDashboardSeeAll).setOnClickListener(v -> openScreen(AnalyticsActivity.class));
 
         listenForData();

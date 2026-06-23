@@ -33,8 +33,8 @@ public class LoginActivity extends BaseActivity {
         bindPasswordToggle(passwordInput, toggle);
 
         loginButton.setOnClickListener(v -> signIn());
-        findViewById(R.id.btnLanguage).setOnClickListener(v -> toast("Bahasa otomatis: Indonesia"));
-        findViewById(R.id.btnPhoneLogin).setOnClickListener(v -> toast("Aktifkan provider Phone di Firebase Auth untuk memakai nomor HP"));
+        findViewById(R.id.btnLanguage).setOnClickListener(v -> toast(getString(R.string.language_auto)));
+        findViewById(R.id.btnPhoneLogin).setOnClickListener(v -> toast(getString(R.string.toast_firebase_phone)));
         findViewById(R.id.linkForgotPassword).setOnClickListener(v -> resetPassword());
 
         TextView register = findViewById(R.id.linkRegister);
@@ -46,11 +46,11 @@ public class LoginActivity extends BaseActivity {
         String password = passwordInput.getText().toString();
 
         if (TextUtils.isEmpty(email)) {
-            emailInput.setError("Email wajib diisi");
+            emailInput.setError(getString(R.string.validation_email_required));
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            passwordInput.setError("Kata sandi wajib diisi");
+            passwordInput.setError(getString(R.string.validation_password_required));
             return;
         }
 
@@ -68,7 +68,7 @@ public class LoginActivity extends BaseActivity {
     private void resetPassword() {
         String email = emailInput.getText().toString().trim();
         if (TextUtils.isEmpty(email)) {
-            emailInput.setError("Isi email dulu");
+            emailInput.setError(getString(R.string.validation_email_first));
             return;
         }
         repository.sendPasswordReset(email, (success, message) -> toast(message));
@@ -76,6 +76,6 @@ public class LoginActivity extends BaseActivity {
 
     private void setLoading(boolean loading) {
         loginButton.setEnabled(!loading);
-        loginButton.setText(loading ? "Memproses..." : getString(R.string.login_action));
+        loginButton.setText(loading ? getString(R.string.processing) : getString(R.string.login_action));
     }
 }

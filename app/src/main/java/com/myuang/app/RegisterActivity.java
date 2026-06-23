@@ -31,8 +31,8 @@ public class RegisterActivity extends BaseActivity {
         bindPasswordToggle(passwordInput, toggle);
 
         registerButton.setOnClickListener(v -> register());
-        findViewById(R.id.btnGoogleRegister).setOnClickListener(v -> toast("Aktifkan provider Google di Firebase Auth untuk memakai Google Sign-In"));
-        findViewById(R.id.btnFacebookRegister).setOnClickListener(v -> toast("Aktifkan provider Facebook di Firebase Auth untuk memakai Facebook Sign-In"));
+        findViewById(R.id.btnGoogleRegister).setOnClickListener(v -> toast(getString(R.string.toast_firebase_google)));
+        findViewById(R.id.btnFacebookRegister).setOnClickListener(v -> toast(getString(R.string.toast_firebase_facebook)));
 
         TextView login = findViewById(R.id.linkLogin);
         login.setOnClickListener(v -> finish());
@@ -45,15 +45,15 @@ public class RegisterActivity extends BaseActivity {
         double initialBalance = parseAmount(balanceInput.getText().toString());
 
         if (TextUtils.isEmpty(name)) {
-            nameInput.setError("Nama wajib diisi");
+            nameInput.setError(getString(R.string.validation_name_required));
             return;
         }
         if (TextUtils.isEmpty(email)) {
-            emailInput.setError("Email wajib diisi");
+            emailInput.setError(getString(R.string.validation_email_required));
             return;
         }
         if (password.length() < 6) {
-            passwordInput.setError("Minimal 6 karakter");
+            passwordInput.setError(getString(R.string.validation_password_length));
             return;
         }
 
@@ -82,6 +82,6 @@ public class RegisterActivity extends BaseActivity {
 
     private void setLoading(boolean loading) {
         registerButton.setEnabled(!loading);
-        registerButton.setText(loading ? "Memproses..." : getString(R.string.register_action));
+        registerButton.setText(loading ? getString(R.string.processing) : getString(R.string.register_action));
     }
 }

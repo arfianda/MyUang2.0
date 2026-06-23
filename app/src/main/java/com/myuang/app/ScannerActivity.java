@@ -46,7 +46,7 @@ public class ScannerActivity extends BaseActivity {
         receiptPreviewImage = findViewById(R.id.imageReceiptPreview);
 
         findViewById(R.id.btnScannerClose).setOnClickListener(v -> finish());
-        findViewById(R.id.btnScannerFlash).setOnClickListener(v -> toast("Flash mengikuti aplikasi kamera perangkat"));
+        findViewById(R.id.btnScannerFlash).setOnClickListener(v -> toast(getString(R.string.toast_scanner_flash)));
         findViewById(R.id.btnScannerGallery).setOnClickListener(v -> openGallery());
         findViewById(R.id.btnScannerManual).setOnClickListener(v -> finish());
         findViewById(R.id.btnScannerCapture).setOnClickListener(v -> openCamera());

@@ -1,15 +1,14 @@
-# MyUang Android Front End Prototype
+# MyUang Android App with Firebase Backend
 
-Prototype Android native untuk MyUang, dibuat dengan Java dan XML tanpa backend atau Firebase.
+Aplikasi Android native untuk MyUang, dikembangkan menggunakan Java dan XML dengan backend Firebase (Authentication, Firestore) dan integrasi Google ML Kit OCR.
 
-## Cara buka
+## Cara Buka & Menjalankan
 
 1. Buka folder ini di Android Studio: `D:\MyUang2.0`
 2. Pastikan Android Studio memakai JDK bawaan Android Studio atau JDK 17+.
 3. Sync Gradle lalu jalankan modul `app`.
 
-## Alur demo
+## Alur Aplikasi
+Splash (Deteksi Lokasi/Bahasa) -> Login/Register -> Dashboard (Ringkasan Real-time & Tren) -> Tambah Transaksi (Manual/Scan) -> Scan Struk AI -> Analisis (Bar Chart) -> Tips AI -> Profil (Ubah Saldo & Mode Gelap).
 
-Splash -> Login/Register -> Dashboard -> Tambah Transaksi -> Scan Struk AI -> Analisis -> Tips AI -> Profil.
-
-Semua data keuangan masih mock/sample dan aksi backend ditampilkan sebagai toast. Scanner memakai ML Kit Text Recognition untuk membaca teks dari gambar kamera/galeri.
+Semua data keuangan, pengguna, dan tips AI terintegrasi secara real-time dengan Firebase Firestore dan Firebase Authentication.

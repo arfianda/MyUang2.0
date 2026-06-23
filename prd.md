@@ -102,7 +102,7 @@ Saat ini pengguna biasanya:
 
 # 8. Core Features (Mandatory Features)
 
-## 8.1 Smart Expense Tracking
+## 8.1 Smart Expense Tracking ✅
 
 Fitur mencatat pemasukan dan pengeluaran.
 
@@ -122,7 +122,7 @@ Fitur mencatat pemasukan dan pengeluaran.
 
 ---
 
-## 8.2 AI Receipt Scanner
+## 8.2 AI Receipt Scanner ✅
 
 Fitur scan struk otomatis menggunakan AI OCR.
 
@@ -141,7 +141,7 @@ Fitur scan struk otomatis menggunakan AI OCR.
 
 ---
 
-## 8.3 Financial Dashboard
+## 8.3 Financial Dashboard ✅
 
 Dashboard utama menampilkan kondisi keuangan user.
 
@@ -153,7 +153,7 @@ Dashboard utama menampilkan kondisi keuangan user.
 
 ---
 
-## 8.4 Expense Analytics Graph
+## 8.4 Expense Analytics Graph ✅
 
 Visualisasi pengeluaran dalam bentuk grafik.
 
@@ -164,7 +164,7 @@ Visualisasi pengeluaran dalam bentuk grafik.
 
 ---
 
-## 8.5 AI Saving Tips
+## 8.5 AI Saving Tips ✅
 
 AI memberikan saran hemat berdasarkan pola pengeluaran.
 

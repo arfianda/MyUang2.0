@@ -126,4 +126,30 @@
         <item>Freelance</item>
         <item>Lainnya</item>
     </string-array>
+    <string name="validation_email_required">Email wajib diisi</string>
+    <string name="validation_password_required">Kata sandi wajib diisi</string>
+    <string name="validation_name_required">Nama wajib diisi</string>
+    <string name="validation_password_length">Minimal 6 karakter</string>
+    <string name="validation_email_first">Isi email dulu</string>
+    <string name="processing">Memproses...</string>
+    <string name="language_auto">Bahasa otomatis: Indonesia</string>
+    <string name="validation_amount_greater_than_zero">Jumlah wajib lebih dari 0</string>
+    <string name="saving">Menyimpan...</string>
+    <string name="toast_firebase_phone">Aktifkan provider Phone di Firebase Auth untuk memakai nomor HP</string>
+    <string name="toast_firebase_google">Aktifkan provider Google di Firebase Auth untuk memakai Google Sign-In</string>
+    <string name="toast_firebase_facebook">Aktifkan provider Facebook di Firebase Auth untuk memakai Facebook Sign-In</string>
+    <string name="manual_mode_active">Mode manual aktif</string>
+    <string name="toast_analytics_sync">Analisis memakai transaksi Firestore terbaru</string>
+    <string name="toast_analytics_real">Kategori sudah dihitung dari transaksi real</string>
+    <string name="toast_dashboard_sync">Dashboard sudah tersinkron real-time</string>
+    <string name="toast_profile_no_notification">Tidak ada notifikasi baru</string>
+    <string name="toast_profile_export">Export laporan akan memakai transaksi Firestore</string>
+    <string name="toast_profile_reminder">Reminder pengeluaran belum aktif</string>
+    <string name="toast_profile_help">Pusat bantuan belum tersedia</string>
+    <string name="toast_scanner_flash">Flash mengikuti aplikasi kamera perangkat</string>
+    <string name="toast_tips_sync">Tips AI dibuat dari transaksi terbaru</string>
+    <string name="cancel">Batal</string>
+    <string name="save">Simpan</string>
+    <string name="hint_current_balance">Saldo saat ini</string>
+    <string name="hint_account_name">Nama akun</string>
 </resources>

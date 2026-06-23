@@ -51,10 +51,12 @@ public class AddTransactionActivity extends BaseActivity {
         gojekChip = findViewById(R.id.chipGojek);
         coffeeChip = findViewById(R.id.chipCoffee);
         setCategoryData(getResources().getStringArray(R.array.expense_categories_array));
-        dateInput.setText(new SimpleDateFormat("dd MMM yyyy", new Locale("in", "ID")).format(new Date()));
+        String lang = LocaleHelper.getLanguage(this);
+        Locale locale = "in".equals(lang) ? new Locale("in", "ID") : Locale.US;
+        dateInput.setText(new SimpleDateFormat("dd MMM yyyy", locale).format(new Date()));
 
         findViewById(R.id.btnAddBack).setOnClickListener(v -> finish());
-        findViewById(R.id.btnManualMode).setOnClickListener(v -> toast("Mode manual aktif"));
+        findViewById(R.id.btnManualMode).setOnClickListener(v -> toast(getString(R.string.manual_mode_active)));
         findViewById(R.id.btnScanMode).setOnClickListener(v -> openScreen(ScannerActivity.class));
         expenseButton.setOnClickListener(v -> setTransactionType(false));
         incomeButton.setOnClickListener(v -> setTransactionType(true));
@@ -130,7 +132,7 @@ public class AddTransactionActivity extends BaseActivity {
     private void saveTransaction() {
         double amount = parseAmount(amountInput.getText().toString());
         if (amount <= 0) {
-            amountInput.setError("Jumlah wajib lebih dari 0");
+            amountInput.setError(getString(R.string.validation_amount_greater_than_zero));
             return;
         }
 
@@ -164,6 +166,6 @@ public class AddTransactionActivity extends BaseActivity {
 
     private void setLoading(boolean loading) {
         saveButton.setEnabled(!loading);
-        saveButton.setText(loading ? "Menyimpan..." : getString(R.string.save_transaction));
+        saveButton.setText(loading ? getString(R.string.saving) : getString(R.string.save_transaction));
     }
 }

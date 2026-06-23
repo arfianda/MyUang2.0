@@ -60,8 +60,8 @@ public class AnalyticsActivity extends BaseActivity {
 
         weeklyButton.setOnClickListener(v -> setPeriod(true));
         monthlyButton.setOnClickListener(v -> setPeriod(false));
-        findViewById(R.id.btnAnalyticsNotification).setOnClickListener(v -> toast("Analisis memakai transaksi Firestore terbaru"));
-        findViewById(R.id.linkAnalyticsAll).setOnClickListener(v -> toast("Kategori sudah dihitung dari transaksi real"));
+        findViewById(R.id.btnAnalyticsNotification).setOnClickListener(v -> toast(getString(R.string.toast_analytics_sync)));
+        findViewById(R.id.linkAnalyticsAll).setOnClickListener(v -> toast(getString(R.string.toast_analytics_real)));
 
         transactionListener = repository.listenTransactions(new MyUangRepository.TransactionsCallback() {
             @Override

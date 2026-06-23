@@ -126,4 +126,30 @@
         <item>Freelance</item>
         <item>Other</item>
     </string-array>
+    <string name="validation_email_required">Email is required</string>
+    <string name="validation_password_required">Password is required</string>
+    <string name="validation_name_required">Name is required</string>
+    <string name="validation_password_length">At least 6 characters</string>
+    <string name="validation_email_first">Please enter your email first</string>
+    <string name="processing">Processing...</string>
+    <string name="language_auto">Language auto: English</string>
+    <string name="validation_amount_greater_than_zero">Amount must be greater than 0</string>
+    <string name="saving">Saving...</string>
+    <string name="toast_firebase_phone">Enable Phone provider in Firebase Auth to use mobile numbers</string>
+    <string name="toast_firebase_google">Enable Google provider in Firebase Auth to use Google Sign-In</string>
+    <string name="toast_firebase_facebook">Enable Facebook provider in Firebase Auth to use Facebook Sign-In</string>
+    <string name="manual_mode_active">Manual mode active</string>
+    <string name="toast_analytics_sync">Analytics uses the latest Firestore transactions</string>
+    <string name="toast_analytics_real">Categories are computed from real transactions</string>
+    <string name="toast_dashboard_sync">Dashboard is synchronized in real-time</string>
+    <string name="toast_profile_no_notification">No new notifications</string>
+    <string name="toast_profile_export">Report export will use Firestore transactions</string>
+    <string name="toast_profile_reminder">Expense reminders are not active yet</string>
+    <string name="toast_profile_help">Help center is not available yet</string>
+    <string name="toast_scanner_flash">Flash controls follow the device\'s camera app</string>
+    <string name="toast_tips_sync">AI Tips are generated from the latest transactions</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="hint_current_balance">Current balance</string>
+    <string name="hint_account_name">Account name</string>
 </resources>
