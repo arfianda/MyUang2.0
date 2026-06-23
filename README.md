@@ -61,8 +61,7 @@ Berikut adalah tata letak antarmuka aplikasi **MyUang** sesuai dengan alur kerja
 ### 3. Pemindaian AI & Analisis Grafik
 | AI Receipt Scanner | Analytics Graph |
 | :---: | :---: |
-| ![AI Receipt Scanner](docs/screenshots/aiscanner.png
-) | ![Analytics](docs/screenshots/analytics.png)
+| ![AI Receipt Scanner](docs/screenshots/aiscanner.png) | ![Analytics](docs/screenshots/analytics.png)
  |
 | *Deteksi struk belanja otomatis via Google ML Kit OCR.* | *Pie/Bar Chart representasi pengeluaran.* |
 
